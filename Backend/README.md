@@ -1,0 +1,1 @@
+https://clemfournier.medium.com/make-crud-operations-on-firebase-firestore-in-python-d51ab6aa98af

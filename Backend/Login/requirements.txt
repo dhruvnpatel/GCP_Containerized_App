@@ -1,0 +1,4 @@
+Flask
+marshmallow
+firebase_admin
+Flask-Cors

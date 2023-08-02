@@ -1,0 +1,44 @@
+version: Latest
+
+services:
+
+  register:
+    container_name: Register
+    image: dhruvnpatel21/register
+    build:
+      context: ./Register
+      dockerfile: Dockerfile
+    
+    restart: always 
+    ports:
+      - 5000:5000
+    volumes:
+      - ./b00891974-credentials\b00891974-csci5410.json:/app/credentials.json
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+  login:
+    container_name: Login
+    image: dhruvnpatel21/login
+    build:
+      context: ./Login
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+      - 5001:5001
+    volumes:
+      - ./b00891974-credentials\b00891974-csci5410.json:/app/credentials.json
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+  homescreen: 
+    container_name: Homescreen
+    image: dhruvnpatel21/homescreen
+    build:
+      context: ./Homescreen
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+      - 5002:5002
+    volumes:
+      - ./b00891974-credentials\b00891974-csci5410.json:/app/credentials.json
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
